@@ -10,24 +10,24 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow space-y-10">
+      <main className="flex-grow">
         <Element name="about">
-          <div>
+          <div className="min-h-[60vh]">
             <About />
           </div>
         </Element>
         <Element name="skills">
-          <div className="pt-20">
+          <div className="">
             <Skills />
           </div>
         </Element>
         <Element name="projects">
-          <div className="pt-20">
+          <div className="mt-16">
             <Projects />
           </div>
         </Element>
         <Element name="achievements">
-          <div className="pt-20">
+          <div className="mt-16 min-h-[60vh]">
             <Achievements />
           </div>
         </Element>

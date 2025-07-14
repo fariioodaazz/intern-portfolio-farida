@@ -1,7 +1,7 @@
 import meIMG from "../assets/ME.jpg";
 export default function About() {
   return (
-    <section className="p-6 bg-white shadow rounded max-w-4xl mx-auto my-10">
+    <section className="p-6 bg-white shadow rounded max-w-4xl mx-auto mt-10">
       <div className="flex flex-col md:flex-row items-center gap-6">
         <img
           src={meIMG}
