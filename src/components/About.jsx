@@ -1,9 +1,10 @@
+import meIMG from "../assets/ME.jpg";
 export default function About() {
   return (
     <section className="p-6 bg-white shadow rounded max-w-4xl mx-auto my-10">
       <div className="flex flex-col md:flex-row items-center gap-6">
         <img
-          src="/images/ME.jpg"
+          src={meIMG}
           alt="Farida Ashraf"
           className="w-40 h-40 rounded-full object-cover border-4 border-purple-400"
         />

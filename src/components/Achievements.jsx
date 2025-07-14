@@ -1,4 +1,7 @@
 import { useState } from "react";
+import ugrfImg from "../assets/UGRF.jpg";
+import gdgImg from "../assets/GDG.jpg";
+import ecpcImg from "../assets/ECPC.jpg";
 
 export default function Achievements() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -7,17 +10,17 @@ export default function Achievements() {
     {
       title: "1st Place – UGRF Project",
       description: "Pet Adoption Management System awarded best DB project.",
-      image: "/images/UGRF.jpg", 
+      image: ugrfImg,
     },
     {
       title: "3rd Place – GDG SWE Project",
       description: "Taqyim platform ranked top 3 at GDG showcase.",
-      image: "/images/GDG.jpg",
+      image: gdgImg,
     },
     {
       title: "ECPC Qualifications Participation",
       description: "Competed in ECPC algorithmic problem-solving.",
-      image: "/images/ECPC.jpg",
+      image: ecpcImg,
     },
   ];
 
@@ -52,7 +55,10 @@ export default function Achievements() {
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-3xl w-full px-4" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative max-w-3xl w-full px-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute -top-8 right-0 text-white text-3xl font-bold"
