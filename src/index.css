@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --primary: 250 47% 60%;
+    --primary-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+  }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 8%;
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
+    --border: 217 33% 20%;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Modern scrollbar styling */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #a78bfa #e5e7eb; /* thumb color + track color (light mode) */
+}
+
+.dark .scrollbar-thin {
+  scrollbar-color: #c4b5fd #1f2937; /* thumb + track in dark mode */
+}
+
+/* Chrome/Edge/Safari */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #a78bfa; /* purple-400 */
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.6);
+}
+  
+}
