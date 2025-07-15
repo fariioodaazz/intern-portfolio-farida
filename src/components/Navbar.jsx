@@ -1,83 +1,85 @@
 import { useEffect, useState } from "react";
-import { Link, Events, scrollSpy } from "react-scroll";
+import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
+
+const navItems = [
+  { name: "Home", href: "#hero" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
-    Events.scrollEvent.register("begin", () => {});
-    Events.scrollEvent.register("end", () => {});
-    scrollSpy.update();
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      Events.scrollEvent.remove("begin");
-      Events.scrollEvent.remove("end");
     };
   }, []);
 
-  const links = ["about", "skills", "projects", "achievements"];
-
   return (
-    <nav
-      className={`sticky top-0 z-50 bg-white shadow-md transition-all ${
-        isScrolled ? "shadow-md" : ""
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-purple-700">Farida</h1>
-        <button
-          className="md:hidden text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
+      <nav className={cn("fixed w-full z-40 transition-all duration-300", isScrolled ? "py-3 bg-background bg-opacity-80 backdrop-blur-md shadow-xs" : "py-5")}>
+        <div className="container mx-auto flex justify-between items-center">
+        <a
+          className="text-xl font-bold text-primary flex items-center"
+          href="#hero"
         >
-          ☰
-        </button>
-        <ul className="hidden md:flex gap-6 text-gray-800 font-semibold">
-          {links.map((section) => (
-            <li key={section}>
-              <Link
-                activeClass="border-b-2 border-purple-600 text-purple-700"
-                to={section}
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={500}
-                className="cursor-pointer capitalize hover:text-purple-600"
-              >
-                {section}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+          <span className="relative z-10">
+            <span className="text-glow text-foreground"> Farida's </span>{" "}
+            Portfolio
+          </span>
+        </a>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <ul className="md:hidden flex flex-col gap-4 px-6 pb-4 text-gray-800 font-semibold">
-          {links.map((section) => (
-            <li key={section}>
-              <Link
-                activeClass="border-b-2 border-purple-600 text-purple-700"
-                to={section}
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={500}
-                onClick={() => setIsOpen(false)}
-                className="cursor-pointer capitalize hover:text-purple-600 block"
-              >
-                {section}
-              </Link>
-            </li>
+          {/* desktop nav */}
+
+          <div className="hidden md:flex space-x-8">
+          {navItems.map((item, key) => (
+            <a
+              key={key}
+              href={item.href}
+              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+            >
+              {item.name}
+            </a>
           ))}
-        </ul>
-      )}
-    </nav>
+          </div>
+
+          {/* mobile nav */}
+          <button
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className="md:hidden p-2 text-foreground z-50"
+            aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
+          </button>
+
+          <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center", 
+            "transition-all duration-300 md:hidden",
+            isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+            )}>
+            <div className="flex flex-col space-y-8 text-xl">
+            {navItems.map((item, key) => (
+              <a
+                key={key}
+                href={item.href}
+                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+            </div>
+          </div>
+
+        </div>
+      </nav>
   );
 }
