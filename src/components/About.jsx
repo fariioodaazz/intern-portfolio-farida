@@ -4,6 +4,7 @@ import Typed from "typed.js";
 import meIMG from "../assets/ME.jpg";
 import cvPDF from "../assets/Farida Ashraf CV Updated.pdf";
 import { Link } from "react-scroll";
+import { IoDocumentAttach } from "react-icons/io5";
 
 export default function About() {
   const typedRef = useRef(null);
@@ -61,7 +62,7 @@ export default function About() {
               loading="lazy"
               className="cosmic-button mt-2 px-2 py-1 bg-purple-200 dark:bg-purple-900  text-purple-800 dark:text-purple-200 rounded hover:bg-purple-300 dark:hover:bg-purple-800 transition-colors duration-200 flex items-center gap-2"
             >
-              📄 Download CV
+              <IoDocumentAttach /> Download CV
             </a>
           </div>
         </div>

@@ -64,21 +64,21 @@ export default function Skills() {
   };
 
   return (
-    <section className="p-6 bg-background text-foreground">
+    <section className="p-6 bg-background text-foreground ">
       <h2 className="text-2xl font-bold mb-6 text-primary text-glow">Skills</h2>
-      <div className="space-y-6">
+      <div className="space-x-3 flex flex-row justify-between items-start mb-6">
         {Object.entries(categorizedSkills).map(([category, skills]) => (
           <div key={category} className="border-b border-border pb-4">
             <button
               onClick={() => toggleCategory(category)}
-              className="flex justify-between w-full items-center mb-3 text-lg font-semibold text-primary"
+              className="flex justify-between w-full items-center text-lg font-semibold text-primary ml-1"
             >
               {category}
               {expanded[category] ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
             </button>
 
             {expanded[category] && (
-              <div className="space-y-4">
+              <div className="space-y-4 mt-4">
                 {skills.map((skill, idx) => (
                   <div key={idx}>
                     <div className="flex justify-between items-center mb-1">

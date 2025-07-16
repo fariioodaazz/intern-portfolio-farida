@@ -74,7 +74,7 @@ export default function Navbar() {
             <li>
               <button
                 onClick={toggleTheme}
-                className="text-primary hover:text-purple-800 ml-2"
+                className="text-primary hover:text-purple-800 ml-2 mt-2"
                 aria-label="Toggle Theme"
               >
                 {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
