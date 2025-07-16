@@ -64,7 +64,7 @@ This is a single-page application built using **React + Vite**, styled with **Ta
 
 ## 🌐 Live Demo
 
-[👉 View Portfolio on GitHub Pages](https://your-username.github.io/repo-name)
+[👉 View Portfolio on GitHub Pages](https://fariioodaazz.github.io/intern-portfolio-farida/)
 
 
 ## 📬 Contact
