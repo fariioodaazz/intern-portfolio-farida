@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Typed from "typed.js";
 import meIMG from "../assets/ME.jpg";
 import cvPDF from "../assets/Farida Ashraf CV Updated.pdf";
-import { Link } from "react-scroll";
 import { IoDocumentAttach } from "react-icons/io5";
 
 export default function About() {

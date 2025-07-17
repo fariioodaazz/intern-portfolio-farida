@@ -19,14 +19,6 @@ export default function Projects() {
       tag: "Website"
     },
     {
-      title: "Suicidal Ideation Detection (ML)",
-      description:
-        "Built a multi-class ML/DL system to detect suicide risk from Reddit posts using XGBoost, CNN, BiLSTM and transformer-based sentiment models.",
-      tech: ["XGBoost", "BiLSTM", "TF-IDF", "Python"],
-      link: "https://github.com/fariioodaazz/Detection-of-Suicidal-Ideation-in-Social-Media-Using-ML-and-DL",
-      tag: "Machine Learning Research"
-    },
-    {
       title: "Pet Adoption Management System",
       description:
         "Developed a C#/MySQL desktop app with real-time updates to streamline pet adoption processes.",

@@ -22,44 +22,44 @@ export default function Skills() {
 
   const categorizedSkills = {
     "Programming Languages": [
-      { name: "C/C++", level: 90, icon: <SiCplusplus /> },
-      { name: "Java", level: 70, icon: <FaJava /> },
-      { name: "Python", level: 90, icon: <FaPython /> },
-      { name: "JavaScript", level: 85, icon: <FaJsSquare /> },
-      { name: "TypeScript", level: 80, icon: <SiTypescript /> },
+      { name: "C/C++", icon: <SiCplusplus /> },
+      { name: "Java", icon: <FaJava /> },
+      { name: "Python", icon: <FaPython /> },
+      { name: "JavaScript", icon: <FaJsSquare /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
     ],
     "Web Development": [
-      { name: "HTML", level: 95, icon: <FaHtml5 /> },
-      { name: "CSS", level: 90, icon: <FaCss3Alt /> },
-      { name: "React", level: 90, icon: <FaReact /> },
-      { name: "Next.js", level: 85, icon: <SiNextdotjs /> },
-      { name: "Django", level: 80, icon: <SiDjango /> },
-      { name: "ASP.NET Core", level: 75, icon: <SiDotnet /> },
-      { name: "Tailwind CSS", level: 90, icon: <SiTailwindcss /> },
+      { name: "HTML", icon: <FaHtml5 /> },
+      { name: "CSS", icon: <FaCss3Alt /> },
+      { name: "React", icon: <FaReact /> },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Django", icon: <SiDjango /> },
+      { name: "ASP.NET Core", icon: <SiDotnet /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
     ],
     "Backend & Databases": [
-      { name: "SQL Server", level: 85, icon: <FaDatabase /> },
-      { name: "MySQL", level: 80, icon: <SiMysql /> },
-      { name: "Entity Framework Core", level: 70, icon: <SiDotnet /> },
+      { name: "SQL Server", icon: <FaDatabase /> },
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "Entity Framework Core", icon: <SiDotnet /> },
     ],
     "State & Auth": [
-      { name: "Redux Toolkit", level: 80, icon: <SiRedux /> },
-      { name: "JWT Authentication", level: 50, icon: <SiJsonwebtokens /> },
+      { name: "Redux Toolkit", icon: <SiRedux /> },
+      { name: "JWT Authentication", icon: <SiJsonwebtokens /> },
     ],
     "Software Engineering": [
-      { name: "SOLID Principles", level: 90, icon: <SiTestrail /> },
-      { name: "Clean Architecture", level: 85, icon: <SiMaterialdesign /> },
-      { name: "Agile", level: 85, icon: <FaTools /> },
+      { name: "SOLID Principles", icon: <SiTestrail /> },
+      { name: "Clean Architecture", icon: <SiMaterialdesign /> },
+      { name: "Agile", icon: <FaTools /> },
     ],
     "Tools & Platforms": [
-      { name: "Git", level: 90, icon: <FaGitAlt /> },
-      { name: "GitHub", level: 95, icon: <FaGithub /> },
-      { name: "Postman", level: 90, icon: <SiPostman /> },
-      { name: "Swagger", level: 85, icon: <SiSwagger /> },
-      { name: "Windows Forms", level: 75, icon: <FaWindows /> },
-      { name: "NumPy", level: 85, icon: <SiNumpy /> },
-      { name: "Pandas", level: 80, icon: <SiPandas /> },
-      { name: "Matplotlib", level: 75, icon: <SiPandas /> },
+      { name: "Git", icon: <FaGitAlt /> },
+      { name: "GitHub", icon: <FaGithub /> },
+      { name: "Postman", icon: <SiPostman /> },
+      { name: "Swagger", icon: <SiSwagger /> },
+      { name: "Windows Forms", icon: <FaWindows /> },
+      { name: "NumPy", icon: <SiNumpy /> },
+      { name: "Pandas", icon: <SiPandas /> },
+      { name: "Matplotlib", icon: <SiPandas /> },
     ],
   };
 
@@ -86,15 +86,6 @@ export default function Skills() {
                         {skill.icon}
                         {skill.name}
                       </div>
-                      <span className="text-xs text-gray-600 dark:text-gray-300">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded h-2">
-                      <div
-                        className="bg-purple-600 h-2 rounded"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
                     </div>
                   </div>
                 ))}
